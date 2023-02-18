@@ -1,0 +1,8 @@
+Main.class
+enums/TypeAdresse.class
+domaines/Personne.class
+domaines/Adresse.class
+enums/RegimeSocial.class
+domaines/BaseEntity.class
+domaines/Organisation.class
+database/Database.class
