@@ -2,6 +2,8 @@ package domaines;
 
 import enums.RegimeSocial;
 
+import java.sql.SQLException;
+
 /**
  * Cette classe représente le modèle d'instantiation d'une organisation
  * @author <a href="https://twitter.com/gioayima">Giovanni Ange Ivane AYIMAMBENWE</a>
@@ -14,21 +16,18 @@ public class Organisation extends BaseEntity {
 
     private RegimeSocial regimeSocial;
 
-    public Organisation(String nom, Adresse adresse, RegimeSocial regimeSocial) {
+    public Organisation(String nom, Adresse adresse, RegimeSocial regimeSocial) throws SQLException {
         super();
         this.nom = nom;
         this.adresse = adresse;
         this.regimeSocial = regimeSocial;
     }
 
-    public Organisation() {
+    public Organisation() throws SQLException {
+        super();
 
     }
 
-    @Override
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getNom() {
         return nom;

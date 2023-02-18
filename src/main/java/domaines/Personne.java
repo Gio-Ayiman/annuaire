@@ -1,5 +1,6 @@
 package domaines;
 
+import java.sql.SQLException;
 import java.time.LocalDate;
 
 /**
@@ -13,7 +14,7 @@ public class Personne extends BaseEntity {
     private LocalDate dateNaissance;
     private Adresse adresse;
 
-    public Personne(String nom, String prenom, LocalDate dateNaissance, Adresse adresse) {
+    public Personne(String nom, String prenom, LocalDate dateNaissance, Adresse adresse) throws SQLException {
         super();
         this.nom = nom;
         this.prenom = prenom;
@@ -21,9 +22,10 @@ public class Personne extends BaseEntity {
         this.adresse = adresse;
     }
 
-    public Personne() {
-
+    public Personne() throws SQLException {
+        super();
     }
+
 
     /**
      * Permet de récupérer le nom d'une personne
@@ -65,8 +67,19 @@ public class Personne extends BaseEntity {
         this.adresse = adresse;
     }
 
-    @Override
+   /* @Override
     public void setId(long id) {
         this.id = id;
+    }*/
+
+    @Override
+    public String toString() {
+        return "Personne{" +
+               "nom='" + nom + '\'' +
+               ", prenom='" + prenom + '\'' +
+               ", dateNaissance=" + dateNaissance +
+               ", adresse=" + adresse +
+               ", id=" + id +
+               '}';
     }
 }

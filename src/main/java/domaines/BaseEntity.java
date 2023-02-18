@@ -1,11 +1,21 @@
 package domaines;
 
-public abstract class BaseEntity {
-    protected Long id;
-    public abstract void setId(long id);
+import database.Database;
 
-    public BaseEntity(){}
-    public Long getId() {
+import java.sql.SQLException;
+
+public abstract class BaseEntity {
+    protected long id;
+
+    public BaseEntity() throws SQLException {
+        this.id = Database.nextVal();
+    }
+
+    public void setId(long identifiant) {
+        this.id = identifiant;
+    }
+    public long getId() {
         return this.id;
     }
+
 }

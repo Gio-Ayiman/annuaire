@@ -12,22 +12,26 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
         Database.connect();
-/*        Database.createPersonneTable();
+/*        Database.createSequence();
+        Database.createBaseEntity();
+        Database.createPersonneTable();
         Database.createTypeAdresseTable();
         Database.createAdresseTable();
         Database.createRegimeSocialTable();
-        Database.createOrganisationTable();*/
+        Database.createOrganisationTable();
 
-//        Personne giovanni = new Personne("AYIMAMBENWE", "Giovanni", LocalDate.of(2001, 8, 07), null);
-//        Menu.registerPersonne(giovanni);
+        Personne giovanni = new Personne("AYIMAMBENWE", "Giovanni", LocalDate.of(2001, 8, 07), null);
+        Menu.registerPersonne(giovanni);
 
-       /* Adresse adresse1 = new Adresse("Fidele Castro", 179L, "Glass", TypeAdresse.RESIDENCE);
+        Adresse adresse1 = new Adresse("Fidele Castro", 179L, "Glass", TypeAdresse.RESIDENCE);
         AdresseRepository adresseRepository = new AdresseRepository();
 
-        adresseRepository.persist(adresse1);*/
+        adresseRepository.persist(adresse1);
+
+        AdresseRepository adresseRepository = new AdresseRepository();
+
+        System.out.println(adresseRepository.findById(6));*/
 
         Menu.executeMenu();
-
-//        System.out.println("-------------" + adresse);
     }
 }

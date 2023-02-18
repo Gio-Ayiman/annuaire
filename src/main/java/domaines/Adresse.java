@@ -2,13 +2,15 @@ package domaines;
 
 import enums.TypeAdresse;
 
+import java.sql.SQLException;
+
 public class Adresse extends BaseEntity {
     private String nomRue;
     private Long numeroRue;
     private String nomQuartier;
     private TypeAdresse typeAdresse;
 
-    public Adresse(String nomRue, Long numeroRue, String nomQuartier, TypeAdresse typeAdresse) {
+    public Adresse(String nomRue, Long numeroRue, String nomQuartier, TypeAdresse typeAdresse) throws SQLException {
         super();
         this.nomRue = nomRue;
         this.numeroRue = numeroRue;
@@ -17,14 +19,10 @@ public class Adresse extends BaseEntity {
     }
 
 
-    public Adresse() {
-
+    public Adresse() throws SQLException {
+        super();
     }
 
-    @Override
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getNomRue() {
         return nomRue;
@@ -56,6 +54,10 @@ public class Adresse extends BaseEntity {
 
     public void setTypeAdresse(TypeAdresse typeAdresse) {
         this.typeAdresse = typeAdresse;
+    }
+
+    public String fullAdresse() {
+        return this.numeroRue + " rue " + this.nomRue + " " + this.nomQuartier;
     }
 
     @Override
